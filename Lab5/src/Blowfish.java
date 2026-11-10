@@ -7,7 +7,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
-public class Blowfish extends Fish {
+public class Blowfish extends Fish implements AnimalBehavior {
     private boolean isToxic;
 
     public Blowfish(String name, int age, double weight, String scaleColor, boolean isToxic) {
@@ -37,5 +37,15 @@ public class Blowfish extends Fish {
 
     public void inflate() {
         System.out.println(getName() + " inflates into a spike ball!");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(getName() + " the blowfish is resting at the sea bottom.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " the Blowfish swims.");
     }
 }

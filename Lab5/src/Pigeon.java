@@ -7,7 +7,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
-public class Pigeon extends Bird {
+public class Pigeon extends Bird implements AnimalBehavior {
     private String species;
 
     public Pigeon(String name, int age, double weight, String featherColor, String species) {
@@ -37,5 +37,15 @@ public class Pigeon extends Bird {
 
     public void deliverMessage() {
         System.out.println(getName() + " is delivering a message!");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(getName() + " the pigeon is sleeping in its nest.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " the Pigeon flies.");
     }
 }

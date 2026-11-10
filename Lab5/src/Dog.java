@@ -7,7 +7,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
-public class Dog extends Mammal {
+public class Dog extends Mammal implements AnimalBehavior {
     private String breed;
 
     public Dog(String name, int age, double weight, String furColor, String breed) {
@@ -37,5 +37,15 @@ public class Dog extends Mammal {
 
     public void fetch() {
         System.out.println(getName() + " is fetching the ball!");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(getName() + " the dog is sleeping soundly in its bed.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " the Dog runs.");
     }
 }
