@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,9 +11,10 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Staff extends Person {
+public class Staff extends Person implements Salary {
     private String education;
     private String position;
+    private int yearsOfExperience;
 
     public void initialize1() {
         super.initialize();
@@ -23,6 +25,10 @@ public class Staff extends Person {
 
         System.out.print("Enter Position: ");
         this.position = scanner.nextLine();
+
+        System.out.print("Enter Years of Experience: ");
+        this.yearsOfExperience = scanner.nextInt();
+        scanner.nextLine();
     }
 
     public void print1() {
@@ -31,4 +37,10 @@ public class Staff extends Person {
         System.out.println("Education:  " + education);
         System.out.println("Position:   " + position);
     }
+
+    @Override
+    public double salaryToPay_Temurov77503(double hours_77503, double rate_77503) {
+        return hours_77503 * rate_77503;
+    }
+
 }
